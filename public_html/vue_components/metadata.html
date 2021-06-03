@@ -1,0 +1,66 @@
+<template id='metadata-template'>
+<div class='container'>
+	<tool-navbar>
+	</tool-navbar>
+
+	<div>
+
+		<h1 tt='metadata'></h1>
+
+		<p class="lead" tt='metadata_lead'></p>
+
+		<div class="tool_box card">
+			<div class="card-body" style='flex-grow: 1;'>
+				<h5 class="card-title">
+					<a href='https://image-annotator.toolforge.org' target='_blank'>
+						<strong>Image annotator</strong>
+					</a>
+				</h5>
+				<p class="card-text" tt='desc_image_annotator'></p>
+			</div>
+		</div>
+
+		<div class="tool_box card">
+			<div class="card-body" style='flex-grow: 1;'>
+				<h5 class="card-title">
+					<a href='https://commons-mass-description.toolforge.org' target='_blank'>
+						<strong>Commons mass description</strong>
+					</a>
+				</h5>
+				<p class="card-text" tt='desc_commons_mass_description'></p>
+			</div>
+		</div>
+
+		<div class="tool_box card">
+			<div class="card-body" style='flex-grow: 1;'>
+				<h5 class="card-title">
+					<a href='https://locator-tool.toolforge.org' target='_blank'>
+						<strong>Locator tool</strong>
+					</a>
+				</h5>
+				<p class="card-text" tt='desc_locator'></p>
+			</div>
+		</div>
+
+		<div class="tools_note" tt="tools_note"></div>
+
+	</div>
+</div>
+</template>
+
+<script>
+'use strict';
+
+let Metadata = Vue.extend ( {
+	//mixins: [uploadMixin] ,
+	props : [] ,
+	data : function () { return { } } ,
+	created : function () { tt.updateInterface(this.$el) ; } ,
+	mounted : function () { tt.updateInterface(this.$el) ; } ,
+    updated : function () { tt.updateInterface(this.$el) ; } ,
+	methods : {
+	} ,
+	template : '#metadata-template'
+} ) ;
+
+</script>

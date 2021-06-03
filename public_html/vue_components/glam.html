@@ -1,0 +1,77 @@
+<template id='glam-template'>
+<div class='container'>
+	<tool-navbar>
+	</tool-navbar>
+
+	<div>
+
+		<h1 tt='glam'></h1>
+
+		<p class="lead" tt='glam_lead'></p>
+
+		<div class="tool_box card">
+			<div class="card-body" style='flex-grow: 1;'>
+				<h5 class="card-title">
+					<a href='https://glamtools.toolforge.org/baglama2/' target='_blank'>
+						<strong>BaGLAMa</strong>
+					</a>
+				</h5>
+				<p class="card-text" tt='desc_baglama'></p>
+			</div>
+		</div>
+
+		<div class="tool_box card">
+			<div class="card-body" style='flex-grow: 1;'>
+				<h5 class="card-title">
+					<a href='https://glamtools.toolforge.org/glamorous/' target='_blank'>
+						<strong>GLAMorous</strong>
+					</a>
+				</h5>
+				<p class="card-text" tt='desc_glamorous'></p>
+			</div>
+		</div>
+
+		<div class="tool_box card">
+			<div class="card-body" style='flex-grow: 1;'>
+				<h5 class="card-title">
+					<a href='https://glamtools.toolforge.org/treeviews' target='_blank'>
+						<strong>TreeViews</strong>
+					</a>
+				</h5>
+				<p class="card-text" tt='desc_treeviews'></p>
+			</div>
+		</div>
+
+		<div class="tool_box card">
+			<div class="card-body" style='flex-grow: 1;'>
+				<h5 class="card-title">
+					<a href='https://glamtools.toolforge.org/glamorgan.html' target='_blank'>
+						<strong>GLAMorgan</strong>
+					</a>
+				</h5>
+				<p class="card-text" tt='desc_glamorgan'></p>
+			</div>
+		</div>
+
+		<div class="tools_note" tt="tools_note"></div>
+
+	</div>
+</div>
+</template>
+
+<script>
+'use strict';
+
+let GLAM = Vue.extend ( {
+	//mixins: [uploadMixin] ,
+	props : [] ,
+	data : function () { return { } } ,
+	created : function () { tt.updateInterface(this.$el) ; } ,
+	mounted : function () { tt.updateInterface(this.$el) ; } ,
+    updated : function () { tt.updateInterface(this.$el) ; } ,
+	methods : {
+	} ,
+	template : '#glam-template'
+} ) ;
+
+</script>

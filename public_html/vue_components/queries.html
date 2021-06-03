@@ -1,0 +1,44 @@
+<template id='queries-template'>
+<div class='container'>
+	<tool-navbar>
+	</tool-navbar>
+
+	<div>
+
+		<h1 tt='queries'></h1>
+
+		<p class="lead" tt='queries_lead'></p>
+
+		<div class="tool_box card">
+			<div class="card-body" style='flex-grow: 1;'>
+				<h5 class="card-title">
+					<a href='https://fist.toolforge.org/wdfist/?psid=19233090' target='_blank'>
+						<strong>Wikipedia requested photographs</strong>
+					</a>
+				</h5>
+				<p class="card-text" tt='desc_wp_requested'></p>
+			</div>
+		</div>
+
+		<div class="tools_note" tt="tools_note"></div>
+
+	</div>
+</div>
+</template>
+
+<script>
+'use strict';
+
+let Queries = Vue.extend ( {
+	//mixins: [uploadMixin] ,
+	props : [] ,
+	data : function () { return { } } ,
+	created : function () { tt.updateInterface(this.$el) ; } ,
+	mounted : function () { tt.updateInterface(this.$el) ; } ,
+    updated : function () { tt.updateInterface(this.$el) ; } ,
+	methods : {
+	} ,
+	template : '#queries-template'
+} ) ;
+
+</script>

@@ -1,0 +1,143 @@
+<template id='maintenance-template'>
+<div class='container'>
+	<tool-navbar>
+	</tool-navbar>
+
+	<div>
+
+		<h1 tt='maintenance'></h1>
+
+		<p class="lead" tt='maintenance_lead'></p>
+
+		<div class="tool_box card">
+			<div class="card-body" style='flex-grow: 1;'>
+				<h5 class="card-title">
+					<a href='https://catfood.toolforge.org/commons_image_feed.php' target='_blank'>
+						<strong>Commons image feed</strong>
+					</a>
+				</h5>
+				<p class="card-text" tt='desc_commons_image_feed'></p>
+			</div>
+		</div>
+
+		<div class="tool_box card">
+			<div class="card-body" style='flex-grow: 1;'>
+				<h5 class="card-title">
+					<a href='https://commons-aiuser.toolforge.org' target='_blank'>
+						<strong>Commons-aiuser</strong>
+					</a>
+				</h5>
+				<p class="card-text" tt='desc_commons_aiuser'></p>
+			</div>
+		</div>
+
+		<div class="tool_box card">
+			<div class="card-body" style='flex-grow: 1;'>
+				<h5 class="card-title">
+					<a href='https://file-siblings.toolforge.org' target='_blank'>
+						<strong>File Siblings</strong>
+					</a>
+				</h5>
+				<p class="card-text" tt='desc_file_siblings'></p>
+			</div>
+		</div>
+
+		<div class="tool_box card">
+			<div class="card-body" style='flex-grow: 1;'>
+				<h5 class="card-title">
+					<a href='https://filedupes.toolforge.org' target='_blank'>
+						<strong>File Duplicates</strong>
+					</a>
+				</h5>
+				<p class="card-text" tt='desc_file_duplicates'></p>
+			</div>
+		</div>
+
+		<div class="tool_box card">
+			<div class="card-body" style='flex-grow: 1;'>
+				<h5 class="card-title">
+					<a href='https://imagebulk.toolforge.org' target='_blank'>
+						<strong>Bulk download</strong>
+					</a>
+				</h5>
+				<p class="card-text" tt='desc_bulk_download'></p>
+			</div>
+		</div>
+
+		<div class="tool_box card">
+			<div class="card-body" style='flex-grow: 1;'>
+				<h5 class="card-title">
+					<a href='https://magnustools.toolforge.org/unused_files.php' target='_blank'>
+						<strong>Unused files</strong>
+					</a>
+				</h5>
+				<p class="card-text" tt='desc_unused_files'></p>
+			</div>
+		</div>
+
+		<div class="tool_box card">
+			<div class="card-body" style='flex-grow: 1;'>
+				<h5 class="card-title">
+					<a href='https://multidesc.toolforge.org' target='_blank'>
+						<strong>Muti-language descriptions</strong>
+					</a>
+				</h5>
+				<p class="card-text" tt='desc_multi_language_descriptions'></p>
+			</div>
+		</div>
+
+		<div class="tool_box card">
+			<div class="card-body" style='flex-grow: 1;'>
+				<h5 class="card-title">
+					<a href='https://add-information.toolforge.org' target='_blank'>
+						<strong>Add Information</strong>
+					</a>
+				</h5>
+				<p class="card-text" tt='desc_add_information'></p>
+			</div>
+		</div>
+
+		<div class="tool_box card">
+			<div class="card-body" style='flex-grow: 1;'>
+				<h5 class="card-title">
+					<a href='https://add-information.toolforge.org/no_information.php' target='_blank'>
+						<strong>No Information</strong>
+					</a>
+				</h5>
+				<p class="card-text" tt='desc_no_information'></p>
+			</div>
+		</div>
+
+		<div class="tool_box card">
+			<div class="card-body" style='flex-grow: 1;'>
+				<h5 class="card-title">
+					<a href='https://usualsuspects.toolforge.org' target='_blank'>
+						<strong>Usual suspects</strong>
+					</a>
+				</h5>
+				<p class="card-text" tt='desc_usual_suspects'></p>
+			</div>
+		</div>
+
+		<div class="tools_note" tt="tools_note"></div>
+
+	</div>
+</div>
+</template>
+
+<script>
+'use strict';
+
+let Maintenance = Vue.extend ( {
+	//mixins: [uploadMixin] ,
+	props : [] ,
+	data : function () { return { } } ,
+	created : function () { tt.updateInterface(this.$el) ; } ,
+	mounted : function () { tt.updateInterface(this.$el) ; } ,
+    updated : function () { tt.updateInterface(this.$el) ; } ,
+	methods : {
+	} ,
+	template : '#maintenance-template'
+} ) ;
+
+</script>

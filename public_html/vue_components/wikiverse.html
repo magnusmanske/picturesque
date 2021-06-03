@@ -1,0 +1,75 @@
+<template id='wikiverse-template'>
+<div class='container'>
+	<tool-navbar>
+	</tool-navbar>
+
+	<div>
+
+		<h1 tt='from_wikiverse'></h1>
+
+		<div class="tool_box card">
+			<div class="card-body" style='flex-grow: 1;'>
+				<h5 class="card-title">
+					<a href='https://fist.toolforge.org/wdfist' target='_blank'>
+						<strong>WD-FIST</strong>
+					</a>
+				</h5>
+				<p class="card-text" tt='desc_wdfist'></p>
+			</div>
+		</div>
+
+		<div class="tool_box card">
+			<div class="card-body" style='flex-grow: 1;'>
+				<h5 class="card-title">
+					<a href='https://fist.toolforge.org/file_candidates' target='_blank'>
+						<strong>File Candidates</strong>
+					</a>
+				</h5>
+				<p class="card-text" tt='desc_file_candidates'></p>
+			</div>
+		</div>
+
+		<div class="tool_box card">
+			<div class="card-body" style='flex-grow: 1;'>
+				<h5 class="card-title">
+					<a href='https://fist.toolforge.org/wd4wp' target='_blank'>
+						<strong>WD4WP</strong>
+					</a>
+				</h5>
+				<p class="card-text" tt='desc_wd4wp'></p>
+			</div>
+		</div>
+
+		<div class="tool_box card">
+			<div class="card-body" style='flex-grow: 1;'>
+				<h5 class="card-title">
+					<a href='https://fist.toolforge.org' target='_blank'>
+						<strong>FIST</strong>
+					</a>
+				</h5>
+				<p class="card-text" tt='desc_fist'></p>
+			</div>
+		</div>
+
+		<div class="tools_note" tt="tools_note"></div>
+
+	</div>
+</div>
+</template>
+
+<script>
+'use strict';
+
+let FromWikiVerse = Vue.extend ( {
+	//mixins: [uploadMixin] ,
+	props : [] ,
+	data : function () { return { } } ,
+	created : function () { tt.updateInterface(this.$el) ; } ,
+	mounted : function () { tt.updateInterface(this.$el) ; } ,
+    updated : function () { tt.updateInterface(this.$el) ; } ,
+	methods : {
+	} ,
+	template : '#wikiverse-template'
+} ) ;
+
+</script>

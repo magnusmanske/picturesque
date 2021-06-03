@@ -1,0 +1,145 @@
+<template id='third-party-template'>
+<div class='container'>
+	<tool-navbar>
+	</tool-navbar>
+
+	<div>
+
+		<h1 tt='from_third_party'></h1>
+
+		<p class="lead" tt='from_third_party_lead'></p>
+
+
+		<div class="tool_box card">
+			<div class="card-body" style='flex-grow: 1;'>
+				<h5 class="card-title">
+					<a href='https://flickr2commons.toolforge.org' target='_blank'>
+						<strong>Flickr2Commons</strong>
+					</a>
+				</h5>
+				<p class="card-text" tt='desc_flickr2commons'></p>
+			</div>
+		</div>
+
+		<div class="tool_box card">
+			<div class="card-body" style='flex-grow: 1;'>
+				<h5 class="card-title">
+					<a href='https://fist.toolforge.org/file_candidates' target='_blank'>
+						<strong>File Candidates</strong>
+					</a>
+				</h5>
+				<p class="card-text" tt='desc_file_candidates'></p>
+			</div>
+		</div>
+
+		<div class="tool_box card">
+			<div class="card-body" style='flex-grow: 1;'>
+				<h5 class="card-title">
+					<a href='https://magnustools.toolforge.org/flickrfree.php' target='_blank'>
+						<strong>FlickrFree</strong>
+					</a>
+				</h5>
+				<p class="card-text" tt='desc_flickr_free'></p>
+			</div>
+		</div>
+
+		<div class="tool_box card">
+			<div class="card-body" style='flex-grow: 1;'>
+				<h5 class="card-title">
+					<a href='https://mapillary-commons.toolforge.org/mapillary2commons/' target='_blank'>
+						<strong>Mapillary to Commons</strong>
+					</a>
+				</h5>
+				<p class="card-text" tt='desc_mapillary2commons'></p>
+			</div>
+		</div>
+
+		<div class="tool_box card">
+			<div class="card-body" style='flex-grow: 1;'>
+				<h5 class="card-title">
+					<a href='https://spacemedia.toolforge.org' target='_blank'>
+						<strong>Media from space agencies for Commons</strong>
+					</a>
+				</h5>
+				<p class="card-text" tt='desc_space_agencies'></p>
+			</div>
+		</div>
+
+		<div class="tool_box card">
+			<div class="card-body" style='flex-grow: 1;'>
+				<h5 class="card-title">
+					<a href='https://twitter-to-commons.toolforge.org' target='_blank'>
+						<strong>Twitter to Commons</strong>
+					</a>
+				</h5>
+				<p class="card-text" tt='desc_twitter2commons'></p>
+			</div>
+		</div>
+
+		<div class="tool_box card">
+			<div class="card-body" style='flex-grow: 1;'>
+				<h5 class="card-title">
+					<a href='https://geograph2commons.toolforge.org' target='_blank'>
+						<strong>Geograph to Commons</strong>
+					</a>
+				</h5>
+				<p class="card-text" tt='desc_geograph2commons'></p>
+			</div>
+		</div>
+
+		<div class="tool_box card">
+			<div class="card-body" style='flex-grow: 1;'>
+				<h5 class="card-title">
+					<a href='https://gdrive-to-commons.toolforge.org/upload/' target='_blank'>
+						<strong>Gdrive</strong>
+					</a>
+				</h5>
+				<p class="card-text" tt='desc_gdrive'></p>
+			</div>
+		</div>
+
+		<div class="tool_box card">
+			<div class="card-body" style='flex-grow: 1;'>
+				<h5 class="card-title">
+					<a href='https://commonshelper.toolforge.org' target='_blank'>
+						<strong>CommonsHelper</strong>
+					</a>
+				</h5>
+				<p class="card-text" tt='desc_commonshelper'></p>
+			</div>
+		</div>
+
+		<div class="tool_box card">
+			<div class="card-body" style='flex-grow: 1;'>
+				<h5 class="card-title">
+					<a href='https://url2commons.toolforge.org' target='_blank'>
+						<strong>URL to Commons</strong>
+					</a>
+				</h5>
+				<p class="card-text" tt='desc_url2commons'></p>
+			</div>
+		</div>
+
+
+		<div class="tools_note" tt="tools_note"></div>
+
+	</div>
+</div>
+</template>
+
+<script>
+'use strict';
+
+let FromThirdParty = Vue.extend ( {
+	//mixins: [uploadMixin] ,
+	props : [] ,
+	data : function () { return { } } ,
+	created : function () { tt.updateInterface(this.$el) ; } ,
+	mounted : function () { tt.updateInterface(this.$el) ; } ,
+    updated : function () { tt.updateInterface(this.$el) ; } ,
+	methods : {
+	} ,
+	template : '#third-party-template'
+} ) ;
+
+</script>

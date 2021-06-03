@@ -1,0 +1,77 @@
+<template id='missing-template'>
+<div class='container'>
+	<tool-navbar>
+	</tool-navbar>
+
+	<div>
+
+		<h1 tt='missing'></h1>
+
+		<p class="lead" tt='missing_lead'></p>
+
+		<div class="tool_box card">
+			<div class="card-body" style='flex-grow: 1;'>
+				<h5 class="card-title">
+					<a href='https://wikimap.toolforge.org' target='_blank'>
+						<strong>WikiMap</strong>
+					</a>
+				</h5>
+				<p class="card-text" tt='desc_wikimap'></p>
+			</div>
+		</div>
+
+		<div class="tool_box card">
+			<div class="card-body" style='flex-grow: 1;'>
+				<h5 class="card-title">
+					<a href='https://commons-coverage.toolforge.org' target='_blank'>
+						<strong>CommonsCoverage</strong>
+					</a>
+				</h5>
+				<p class="card-text" tt='desc_commons_coverage'></p>
+			</div>
+		</div>
+
+		<div class="tool_box card">
+			<div class="card-body" style='flex-grow: 1;'>
+				<h5 class="card-title">
+					<a href='https://wikinity.toolforge.org' target='_blank'>
+						<strong>Wikinity</strong>
+					</a>
+				</h5>
+				<p class="card-text" tt='desc_wikinity'></p>
+			</div>
+		</div>
+
+		<div class="tool_box card">
+			<div class="card-body" style='flex-grow: 1;'>
+				<h5 class="card-title">
+					<a href='https://bldrwnsch.toolforge.org' target='_blank'>
+						<strong>Bldrwnsch</strong>
+					</a>
+				</h5>
+				<p class="card-text" tt='desc_bldrwnsch'></p>
+			</div>
+		</div>
+
+		<div class="tools_note" tt="tools_note"></div>
+
+	</div>
+</div>
+</template>
+
+<script>
+'use strict';
+
+let Missing = Vue.extend ( {
+	//mixins: [uploadMixin] ,
+	props : [] ,
+	data : function () { return { } } ,
+	created : function () { tt.updateInterface(this.$el) ; } ,
+	mounted : function () { tt.updateInterface(this.$el) ; } ,
+    updated : function () { tt.updateInterface(this.$el) ; } ,
+	methods : {
+	} ,
+	template : '#missing-template'
+} ) ;
+
+</script>

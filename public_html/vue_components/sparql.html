@@ -1,0 +1,93 @@
+<template id='sparql-template'>
+<div class='container'>
+	<tool-navbar>
+	</tool-navbar>
+
+	<div>
+
+		<h1 tt='sparql'></h1>
+
+		<p class="lead" tt='sparql_lead'></p>
+
+		<div>
+			<span tt='add_type_item'></span>
+			<typeahead-search type='item' language='en' @setq='setq'></typeahead-search>
+			<span tt='click_to_add'></span>
+		</div>
+
+		<div style='display:flex; margin-top:0.5rem;'>
+			<div v-for='t in types' class="badge badge-success">
+				<wd-link :item='t' as_text='1'></wd-link>
+				<a href='#' @click.prevent='remove_type(t)'>&times;</a>
+			</div>
+		</div>
+
+		<div style='margin-top:1rem;'>
+			<span tt='location'></span>
+			<typeahead-search type='item' language='en' nofocus='1' @setq='setq_location'></typeahead-search>
+		</div>
+
+		<div style='margin-top:1rem;'>
+			<div v-if='sparql==""' tt='fill_in_values'></div>
+			<div v-else>
+				<pre>{{sparql}}</pre>
+				<div style='display:flex'>
+					<a class='btn btn-outline-primary' target='_blank' :href='"https://query.wikidata.org/#"+escape(sparql)' tt='query_wd'></a>
+				</div>
+			</div>
+		</div>
+
+		<div class="tools_note" tt="tools_note"></div>
+
+	</div>
+</div>
+</template>
+
+<script>
+'use strict';
+
+let SPARQL = Vue.extend ( {
+	//mixins: [uploadMixin] ,
+	props : [] ,
+	data : function () { return { sparql:'' , types:[] , location:'' } } ,
+	created : function () { tt.updateInterface(this.$el) ; } ,
+	mounted : function () { tt.updateInterface(this.$el) ; this.update_sparql(); } ,
+    updated : function () { tt.updateInterface(this.$el) ; } ,
+	methods : {
+		update_sparql : function () {
+			let me = this ;
+			me.sparql = "" ;
+			if ( me.types.length == 0 ) return ;
+			me.sparql += "SELECT ?item ?sitelinks {\n" ;
+			me.sparql += "\tVALUES ?types { wd:" + me.types.join(" wd:") + " }\n" ;
+			me.sparql += "\t?item wdt:P31/wdt:P279* ?types ; # Types\n" ;
+			if ( me.location != '' ) {
+				me.sparql += "\twdt:P131* wd:"+me.location+" ; # Location\n" ;
+			}
+			me.sparql += "\twikibase:sitelinks ?sitelinks . # Number of sitelinks\n" ;
+			me.sparql += "\t#  FILTER ( ?sitelinks>=5 ) # Uncomment this line to filter by number of sitelinks\n" ;
+			me.sparql += "\tMINUS { ?item wdt:P18 [] } # Only item without image\n" ;
+			me.sparql += "\tMINUS { ?item wdt:P576 [] } # Only items that do not have a dissolved, abolished or demolished date\n" ;
+			me.sparql += "}\nORDER BY DESC(?sitelinks) # Order by most sitelinks first" ;
+		} ,
+		remove_type : function ( q ) {
+			let idx ;
+			if ((idx = this.types.indexOf(q)) !== -1) {
+				this.types.splice(idx, 1);
+				this.update_sparql();
+			}
+		} ,
+		setq : function ( q ) {
+			if (this.types.indexOf(q) !== -1) return ; // Already in list
+			this.types.push(q);
+			this.update_sparql();
+		} ,
+		setq_location : function ( q ) {
+			this.location = q ;
+			this.update_sparql();
+		}
+	} ,
+	template : '#sparql-template'
+} ) ;
+
+</script>

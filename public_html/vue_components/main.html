@@ -15,6 +15,11 @@ div.tool_group:hover {
 <template id='main-template'>
 <div class='container'>
 	<tool-navbar>
+		<div slot='right'>
+			<a href='https://github.com/magnusmanske/picturesque' target='_blank' title='GitHub'>
+				<img src='https://upload.wikimedia.org/wikipedia/commons/thumb/a/ae/Github-desktop-logo-symbol.svg/38px-Github-desktop-logo-symbol.svg.png' />
+			</a>
+		</div>
 	</tool-navbar>
 
 	<div style='display:flex'>
@@ -115,21 +120,7 @@ div.tool_group:hover {
 <script>
 'use strict';
 
-/*
-
-SELECT ?item ?sitelinks {
-  VALUES ?types { wd:Q23413 } . # CHANGE "wd:Q####" TO BE THE ITEM FOR HOUSE, STATUE ETC
-  ?item wdt:P31/wdt:P279* ?types ;
-  wikibase:sitelinks ?sitelinks .
-  MINUS { ?item wdt:P18 [] }
-  MINUS { ?item wdt:P576 [] }
-  FILTER ( ?sitelinks >= 5 )
-}
-ORDER BY DESC(?sitelinks)
-*/
-
 let MainPage = Vue.extend ( {
-	//mixins: [uploadMixin] ,
 	props : [] ,
 	data : function () { return { } } ,
 	created : function () { tt.updateInterface(this.$el) ; } ,
